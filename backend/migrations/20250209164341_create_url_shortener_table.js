@@ -5,7 +5,7 @@
 exports.up = function(knex) {
   return knex.schema.createTable('url_shortener', function(table) {
     table.increments('id').primary();
-    table.string('original_url').notNullable().unique();
+    table.text('original_url').notNullable().unique();
     table.string('short_url').notNullable().unique();
     table.timestamp('created_at').defaultTo(knex.fn.now());
   });
