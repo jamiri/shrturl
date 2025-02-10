@@ -12,11 +12,11 @@ export class UrlUseCase implements IUrlUseCase {
   }
 
   public async shortenUrl(url: string): Promise<string> {
-    const maxRetries = 5 // Maximum number of retries
+    const maxRetries = 5
     let retryCount = 0
 
     while (retryCount < maxRetries) {
-      const short = this.generateShortUrl() // Generate a new short URL
+      const short = this.generateShortUrl()
 
       const dbResult = await this.urlService.saveUrl({ originalUrl: url, shortUrl: short })
 
@@ -47,6 +47,6 @@ export class UrlUseCase implements IUrlUseCase {
   }
 
   private generateShortUrl(): string {
-    return `${uuid62.v4().substring(2, 10)}` // Generate a random short URL
+    return `${uuid62.v4().substring(2, 10)}`
   }
 }
