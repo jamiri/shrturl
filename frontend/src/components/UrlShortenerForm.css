@@ -1,0 +1,89 @@
+/* Add this to your CSS file */
+.url-shortener-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.url-shortener-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.url-shortener-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.url-shortener-form input[type="url"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.url-shortener-form button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.url-shortener-form button:hover {
+    background-color: #0056b3;
+}
+
+.success-message {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #e8f5e9;
+    border: 1px solid #c8e6c9;
+    border-radius: 4px;
+    color: #2e7d32;
+}
+
+.success-message h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.success-message a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.success-message a:hover {
+    text-decoration: underline;
+}
+
+.copy-button {
+    margin-top: 10px;
+    margin-left: 10px;
+    padding: 8px 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.copy-button:hover {
+    background-color: #45a049;
+}
+
+.error-message {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #ffebee;
+    border: 1px solid #ffcdd2;
+    border-radius: 4px;
+    color: #c62828;
+}
