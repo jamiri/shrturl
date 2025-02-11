@@ -7,6 +7,8 @@ export interface IUrlUseCase {
   getUrl(shortUrl: string): Promise<string>
 }
 
+const shrinkedUrlLength = 6
+
 export class UrlUseCase implements IUrlUseCase {
   constructor(private urlService: IUrlService, private baseUrl: string) {
   }
@@ -16,7 +18,7 @@ export class UrlUseCase implements IUrlUseCase {
     let retryCount = 0
 
     while (retryCount < maxRetries) {
-      const short = this.generateShortUrl()
+      const short = this.generateShortUrl(shrinkedUrlLength)
 
       const dbResult = await this.urlService.saveUrl({ originalUrl: url, shortUrl: short })
 
@@ -46,7 +48,7 @@ export class UrlUseCase implements IUrlUseCase {
     throw new Error(dbResult.message || 'Failed to get original URL')
   }
 
-  private generateShortUrl(): string {
-    return `${uuid62.v4().substring(2, 10)}`
+  private generateShortUrl(length: number = 10): string {
+    return `${uuid62.v4().substring(2, 2 + length)}`
   }
 }
